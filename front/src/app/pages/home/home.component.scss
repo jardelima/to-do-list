@@ -1,0 +1,43 @@
+@import "../../../styles//variables.scss";
+
+.home {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1rem;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+  background-color: $white;
+
+  h1 {
+    color: $primary;
+  }
+
+  p {
+    color: $black;
+    margin: 0 0 20px;
+  }
+
+  a {
+    background-color: $green;
+    border: none;
+    border-radius: 6px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: $white;
+    padding: 0.5rem 2rem;
+    transition: 400ms;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0.9);
+    }
+  }
+}

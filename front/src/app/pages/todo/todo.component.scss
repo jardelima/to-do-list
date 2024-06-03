@@ -1,0 +1,141 @@
+@import "../../../styles/variables.scss";
+
+.add-todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 30px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+  background-color: $white;
+
+  .field {
+    width: 100%;
+    max-width: 400px;
+
+    label {
+      font-size: 14px;
+    }
+  }
+
+  .field__input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus-within {
+      input[type="text"],
+      input[type="submit"] {
+        border: 1px solid rgba(0,0,0,0.2);
+      }
+    }
+
+    input[type="text"] {
+      width: 100%;
+      height: 40px;
+      border: 1px solid rgba(0,0,0,0.1);
+      background-color: $white;
+      border-radius: 6px 0 0 6px;
+      outline: none;
+      padding: 0 1rem;
+      font-size: 14px;
+    }
+
+    input[type="submit"] {
+      background-color: $green;
+      border: 1px solid $green;
+      height: 40px;
+      border-radius: 0 6px 6px 0;
+      padding: 0 1rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $white;
+      font-size: 12px;
+      transition: 400ms;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(0.9);
+      }
+    }
+  }
+}
+
+.todos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1rem;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+  background-color: $white;
+
+  .todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    input {
+      font-size: 14px;
+      font-weight: 300;
+      padding: 0 1rem;
+      background-color: $white;
+      border: none;
+      width: 100%;
+      height: 40px;
+      outline: none;
+    }
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+  }
+
+  .delete-todo {
+    background-color: $primary;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0.9);
+    }
+  }
+
+  .edit-todo {
+    background-color: $secondary;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0.9);
+    }
+  }
+}

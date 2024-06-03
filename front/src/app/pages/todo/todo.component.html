@@ -1,0 +1,30 @@
+<main class="container">
+  <div class="add-todo">
+    <app-title title="To Do List em Angular + Node"></app-title>
+
+    <div class="field">
+      <label for="todo">Adicione uma tarefa</label>
+
+      <div class="field__input">
+        <input type="text" name="todo" id="todo" #todoInput>
+        <input type="submit" value="add" (click)="addTodo(todoInput)">
+      </div>
+    </div>
+  </div>
+
+  <div class="todos" *ngIf="todos.length > 0">
+    <div class="todo" *ngFor="let todo of todos">
+      <input type="text" id="{{todo.id}}" #todoValue disabled value="{{todo.todo}}">
+
+      <div class="controls">
+        <div class="edit-todo" (click)="updateTodo(todoValue, icon)">
+          <ng-icon #icon name="bootstrapPencil"></ng-icon>
+        </div>
+
+        <div class="delete-todo" (click)="deleteTodo(todoValue)">
+          <ng-icon name="bootstrapTrash"></ng-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
