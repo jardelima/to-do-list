@@ -1,5 +1,5 @@
 # to-do-list
-⚠️ Em desenvolvimento ⚠️
+⚠️ Em Desenvolvimento ⚠️
 
 To Do List feita em Angular e Node como forma de estudo.
 
