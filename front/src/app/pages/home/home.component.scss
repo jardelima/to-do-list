@@ -21,6 +21,8 @@
   p {
     color: $black;
     margin: 0 0 20px;
+    text-align: center;
+    font-size: 14px;
   }
 
   a {
@@ -34,6 +36,11 @@
     color: $white;
     padding: 0.5rem 2rem;
     transition: 400ms;
+    width: 200px;
+
+    & + a {
+      margin-top: 10px;
+    }
 
     &:hover {
       cursor: pointer;

@@ -1,0 +1,99 @@
+<main class="container">
+  <div class="register">
+    <app-title title="To Do List em Angular + Node"></app-title>
+
+    <form action="" [formGroup]="registerForm">
+      <div class="field">
+        <label for="name">Nome e sobrenome</label>
+        <input type="text" class="form-control" name="name" id="name" formControlName="name">
+        <p
+          class="input-error"
+          *ngIf="formErrors?.['name']?.invalid && (formErrors?.['name']?.dirty || formErrors?.['name']?.touched) && formErrors?.['name']?.errors?.['required']"
+        >
+          Campo nome e sobrenome é obrigatório!
+        </p>
+        <p
+          class="input-error"
+          *ngIf="formErrors?.['name']?.invalid && formErrors?.['name']?.touched && formErrors?.['name']?.errors?.['minlength']"
+        >
+          Campo nome e sobrenome deve ter no mínimo 6 caracteres!
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" formControlName="email">
+        <p
+          class="input-error"
+          *ngIf="formErrors?.['email']?.invalid && (formErrors?.['email']?.dirty || formErrors?.['email']?.touched) && formErrors?.['email']?.errors?.['required']"
+        >
+          Campo e-mail é obrigatório!
+        </p>
+        <p
+          class="input-error"
+          *ngIf="formErrors?.['email']?.invalid && formErrors?.['email']?.touched && formErrors?.['email']?.errors?.['email']"
+        >
+          E-mail inválido!
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="password">Senha</label>
+
+        <div class="field__password">
+          <input [type]="showPassword ? 'text' : 'password'" name="password" id="password" formControlName="password">
+
+          <div class="show-password" (click)="handleShowPassword()">
+            <ng-icon [name]="showPassword ? 'bootstrapEyeSlash' : 'bootstrapEye'"></ng-icon>
+          </div>
+        </div>
+
+        <p
+          class="input-error"
+          *ngIf="formErrors?.['password']?.invalid && (formErrors?.['password']?.dirty || formErrors?.['password']?.touched) && formErrors?.['password']?.errors?.['required']"
+        >
+          Campo senha é obrigatório!
+        </p>
+        <p
+          class="input-error"
+          *ngIf="formErrors?.['password']?.invalid && formErrors?.['password']?.touched && formErrors?.['password']?.errors?.['minlength']"
+        >
+          A senha deve ter no mínimo 6 caracteres!
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="confirm-password">Confirmar Senha</label>
+
+        <div class="field__password">
+          <input [type]="showConfirmPassword ? 'text' : 'password'" name="confirm-password" id="confirm-password" formControlName="confirmPassword">
+
+          <div class="show-password" (click)="handleShowConfirmPassword()">
+            <ng-icon [name]="showConfirmPassword ? 'bootstrapEyeSlash' : 'bootstrapEye'"></ng-icon>
+          </div>
+        </div>
+
+        <p
+          class="input-error"
+          *ngIf="formErrors?.['confirmPassword']?.invalid && (formErrors?.['confirmPassword']?.dirty || formErrors?.['confirmPassword']?.touched) && formErrors?.['confirmPassword']?.errors?.['required']"
+        >
+          Campo confirmar senha é obrigatório!
+        </p>
+        <p
+          class="input-error"
+          *ngIf="formErrors?.['confirmPassword']?.invalid && formErrors?.['confirmPassword']?.touched && formErrors?.['confirmPassword']?.errors?.['minlength']"
+        >
+          A senha deve ter no mínimo 6 caracteres!
+        </p>
+        <p
+          class="input-error"
+          *ngIf="passwordNotMatch"
+        >
+          As senhas não são iguais!
+        </p>
+      </div>
+
+      <input type="submit" value="Fazer Cadastro" (click)="handleSubmit()">
+    </form>
+  </div>
+</main>
