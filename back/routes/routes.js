@@ -1,15 +1,16 @@
 import express from "express";
 import {v4 as uuid} from "uuid";
+import verifyToken from "../middlewares/verifyToken.js";
 
-const routes = express.Router();
+const todo_routes = express.Router();
 
 let todos = [];
 
-routes.get("/todos", (req, res) => {
+todo_routes.get("/todos", verifyToken, (req, res) => {
     return res.status(200).json({ message: "get todos success", todos });
 });
 
-routes.post("/add-todo", (req, res) => {
+todo_routes.post("/add-todo", verifyToken, (req, res) => {
     const { todo } = req.body;
 
     if (!todo) {
@@ -24,7 +25,7 @@ routes.post("/add-todo", (req, res) => {
     return res.status(201).json({ message: "todo created success", todos });
 });
 
-routes.delete("/delete-todo/:id", (req, res) => {
+todo_routes.delete("/delete-todo/:id", verifyToken, (req, res) => {
     const { id } = req.params;
 
     for(let i = 0; i < todos.length; i++) {
@@ -35,7 +36,7 @@ routes.delete("/delete-todo/:id", (req, res) => {
     }
 });
 
-routes.patch("/update-todo/:id", (req, res) => {
+todo_routes.patch("/update-todo/:id", verifyToken, (req, res) => {
     const { id } = req.params;
     const { todoUpdated } = req.body;
 
@@ -47,4 +48,4 @@ routes.patch("/update-todo/:id", (req, res) => {
     });
 });
 
-export default routes;
+export default todo_routes;
