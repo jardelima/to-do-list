@@ -31,14 +31,14 @@ To Do List feita em Angular e Node como forma de estudo.
 - [x] Tela inicial
 - [x] Tela de login
 - [x] Tela de tarefas a fazer
-- [ ] Tela de registro de usuário
+- [x] Tela de registro de usuário
 
 ## Etapas de implementação back:
 - [x] Endpoint de ver todas as tarefas
 - [x] Endpoint de adicionar um nova tarefa
 - [x] Endpoint de remover uma tarefa
 - [x] Endpoint de atualizar uma tarefa
-- [ ] Endpoint de login
+- [x] Endpoint de login
 - [ ] Endpoint de registro de usuário
 
 ## Etapas de implementação infra:
